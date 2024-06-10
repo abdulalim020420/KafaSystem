@@ -12,7 +12,13 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('muipadmin', function (Blueprint $table) {
-            $table->id();
+            $table->increments('MUIPAdminID');
+            $table->string('MUIPAdminName');
+            $table->string('MUIPAdminUsername');
+            $table->string('MUIPAdminPass');
+            $table->string('MUIPAdminAddress');
+            $table->integer('MUIPAdminContact');
+            $table->string('MUIPAdminEmail');
             $table->timestamps();
         });
     }

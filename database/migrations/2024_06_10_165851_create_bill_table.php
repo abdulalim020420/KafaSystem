@@ -12,7 +12,13 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('bill', function (Blueprint $table) {
-            $table->id();
+            $table->increments('billID');
+            $table->integer('studentID')->unsigned();
+            $table->foreign('studentID')->references('StudentID')->on('student');
+            $table->string('billDescription');
+            $table->float('billAmount');
+            $table->dateTime('billDueDate');
+            $table->string('billStatus');
             $table->timestamps();
         });
     }

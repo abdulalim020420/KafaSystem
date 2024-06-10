@@ -12,7 +12,13 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('kafaadmin', function (Blueprint $table) {
-            $table->id();
+            $table->increments('KAFAAdminID');
+            $table->string('KAFAAdminName');
+            $table->string('KAFAAdminUsername');
+            $table->string('KAFAAdminPass');
+            $table->string('KAFAAdminAddress');
+            $table->integer('KAFAAdminContact');
+            $table->string('KAFAAdminEmail');
             $table->timestamps();
         });
     }
